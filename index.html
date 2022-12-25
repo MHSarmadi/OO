@@ -6,77 +6,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OO JS SDK</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Highlighter/styles/atom-one-dark.min.css">
     <style>
         @font-face {
             font-family: Sahel;
-            src: local(Sahel), url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel.ttf);
-            font-weight: normal;
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel.ttf);
         }
         @font-face {
             font-family: Sahel;
-            src: local(Sahel), url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel-Bold.ttf);
-            font-weight: bold;
+            font-style: normal;
+            font-weight: 600;
+            src: url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel-Bold.ttf);
         }
         @font-face {
             font-family: Sahel;
-            src: local(Sahel), url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel-Black.ttf);
-            font-weight: bolder;
+            font-style: normal;
+            font-weight: 900;
+            src: url(https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/Sahel-Black.ttf);
         }
         @font-face {
             font-family: 'Calibri';
             font-style: normal;
-            font-weight: bold;
+            font-weight: 600;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibri.woff') format('woff');
         }
         @font-face {
             font-family: 'Calibri';
             font-style: italic;
-            font-weight: bold;
+            font-weight: 600;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibrii.woff') format('woff');
         }
         @font-face {
             font-family: 'Calibri';
             font-style: normal;
-            font-weight: normal;
+            font-weight: 400;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibril.woff') format('woff');
         }
         @font-face {
             font-family: 'Calibri';
             font-style: italic;
-            font-weight: normal;
+            font-weight: 400;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibrili.woff') format('woff');
         }
         @font-face {
             font-family: 'Calibri';
             font-style: normal;
-            font-weight: bolder;
+            font-weight: 900;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibrib.woff') format('woff');
         }
         @font-face {
             font-family: 'Calibri';
             font-style: italic;
-            font-weight: bolder;
+            font-weight: 900;
             src: local('calibri'), url('https://fonts.cdnfonts.com/s/78322/calibriz.woff') format('woff');
         }
+        /* @font-face {
+            font-family: jetbrains mono;
+            font-style: normal;
+            font-weight: normal;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoRegular-RpvmM.woff) format('woff');
+        }
+        @font-face {
+            font-family: jetbrains mono;
+            font-style: italic;
+            font-weight: normal;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoItalic-lg91X.woff) format('woff')
+        }
+        @font-face {
+            font-family: jetbrains mono;
+            font-style: normal;
+            font-weight: bold;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoMedium-nRvBM.woff) format('woff')
+        }
+        @font-face {
+            font-family: jetbrains mono;
+            font-style: italic;
+            font-weight: bold;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoMediumItalic-1GDgL.woff) format('woff')
+        }
+        @font-face {
+            font-family: jetbrains mono;
+            font-style: normal;
+            font-weight: bolder;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoBold-51Xez.woff) format('woff')
+        }
+        @font-face {
+            font-family: jetbrains mono;
+            font-style: italic;
+            font-weight: bolder;
+            src: local('JetBrains Mono'), url(https://fonts.cdnfonts.com/s/36131/JetbrainsMonoBoldItalic-6YyW6.woff) format('woff')
+        } */
+        @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 
-        * {
-            font-family: Sahel, Calibri, arial, sans-serif;
+        *:not(pre, code, code span) {
+            font-family: Sahel;
+        }
+        *:not(pre, code, code span, h1,h2,h3,h4,h5,h6) {
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 20rem;
+            background-image: url(./Pictures/BlueSky.jpg);
+        }
+        main {
+            position: relative;
+            top: 5rem;
+            right: 0;
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            height: 4rem;
+            background: #444;
+            color: lightgray;
+        }
+
+        pre, code, code span {
+            direction: ltr;
+            text-align: left;
+            font-family: jetbrains mono, consolas, monospace;
+        }
+        pre {
+            border-radius: 1rem;
+            margin: 1rem;
         }
     </style>
 </head>
 <body>
     <nav>
-
+        <h1>سلام</h1>
     </nav>
     <main>
+        <pre><code class="language-html af"></code></pre>
 
+        <pre><code class="language-js af"></code></pre>
+
+        <footer>
+            ساخته شده با 💙 در ایران :)
+        </footer>
     </main>
-    <footer>
-
-    </footer>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://raw.githubusercontent.com/MHSarmadi/oo/main/oo.js"></script>
+    <!-- <script src="https://mhsarmadi.github.io/oo/oo.js"></script> -->
+    <script src="./oo.js"></script>
+    <script src="./Highlighter/highlight.min.js"></script>
+    <script>
+    
+    const codes = [
+`<!DOCTYPE html>
+<html>
+</html>`,
+`function() {
+    alert('Hello, World!');
+}`
+    ]
+
+    OO('pre code.af').each((elem,i) => OO(elem).html(escapeHTML(codes[i])))
+    
+    hljs.highlightAll();
+
+    function escapeHTML(unsafe)
+    {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    
+    </script>
 </body>
 </html>
