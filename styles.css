@@ -1,11 +1,45 @@
 :root {
   --space: 1.5rem;
+  --main: #0475FE;
+  --second: #AA2FED;
+  --main-dark: #0132BB;
+  --second-dark: #670CAA;
+  --main-light: #89BCFF;
+  --second-light: #C099FF;
+  --main-bright: #DEF;
+  --second-bright: #ECF;
+  --main-darkest: #036;
+  --second-darkest: #214;
+  --main-black: #000F2F;
+  --second-black: #1D0030;
 }
 *:not(pre, code, code span) {
   font-family: Sahel;
 }
+*:not(pre, code, code span):not(a, a *) {
+  color: var(--main-black);
+}
 *:not(pre, code, code span):not(h1,h2,h3,h4,h5,h6) {
   font-weight: 400;
+}
+*:not(pre) code {
+  color: var(--second-dark);
+  padding: 0 6px;
+  background: var(--bs-gray-300);
+  border-radius: 0.3rem;
+  margin: 0 2px;
+}
+.en {
+  direction: left;
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800 !important;
 }
 html,
 body {
@@ -88,6 +122,73 @@ main {
   background-color: white;
   box-shadow: 0px -5px 20px 0px #0004;
   border-radius: var(--space);
+  padding: 2rem 3rem;
+}
+main p,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  text-align: justify;
+}
+main div.download-box {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main div.download-box > div {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+main div.download-box > div.right {
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main div.download-box > div.right h1 {
+  color: var(--main);
+}
+main div.download-box > div.right h2 {
+  color: var(--second);
+  font-size: 27px;
+  margin-top: 1rem;
+}
+main div.download-box > div.left {
+  flex-flow: row nowrap;
+  justify-content: end;
+  align-items: center;
+}
+main div.download-box > div.left a {
+  display: flex;
+  width: max-content;
+  padding: 2rem 2.5rem;
+  background: none;
+  color: var(--main-dark);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 23px;
+  border: 2px solid var(--main-dark);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+main div.download-box > div.left a:hover {
+  background: var(--main-dark);
+  color: var(--main-bright);
+}
+main div.download-box > div.left a span {
+  margin-top: 1rem;
 }
 footer {
   display: flex;
@@ -107,5 +208,5 @@ code span {
 }
 pre {
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
 }
